@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Wrapper from '../Helpers/Wrapper';
 import Button from '../UI/Button';
 import Cart from '../UI/Cart';
 import ErrorModule from '../UI/ErrorModule';
@@ -39,7 +40,7 @@ const AddUser = (props) => {
         setError(null);
     };
     return (
-        <div>
+        <Wrapper>
             {error && <ErrorModule title={error.title} message={error.message} errorHandle={errorHandle} />}
             <Cart>
                 <form className='user' onSubmit={addUserHandler}>
@@ -50,7 +51,7 @@ const AddUser = (props) => {
                     <Button type="submit">AddUser</Button>
                 </form>
             </Cart>
-        </div>
+        </Wrapper>
     );
 };
 
