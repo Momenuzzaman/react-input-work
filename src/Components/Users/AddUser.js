@@ -6,8 +6,6 @@ import ErrorModule from '../UI/ErrorModule';
 import './AddUser.css';
 
 const AddUser = (props) => {
-    // const [enteredName, setEnteredName] = useState('');
-    // const [enteredAge, setEnteredAge] = useState('');
     const [error, setError] = useState();
     const nameInputRef = useRef();
     const ageInputRef = useRef();
@@ -31,16 +29,10 @@ const AddUser = (props) => {
             return;
         }
         props.onAddUser(enteredName, enteredAge);
-        nameInputRef.current.value('');
-        ageInputRef.current.value('');
+        nameInputRef.current.value = '';
+        ageInputRef.current.value = '';
     };
 
-    // const handleChangeName = (event) => {
-    //     setEnteredName(event.target.value);
-    // };
-    // const handleChangeAge = (event) => {
-    //     setEnteredAge(event.target.value);
-    // };
     const errorHandle = () => {
         setError(null);
     };
